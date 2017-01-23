@@ -15,7 +15,7 @@ ExternalProject_Add(catch
 	TEST_COMMAND ""
 
 	)
-
+include_directories(${CMAKE_SOURCE_DIR}/INSTALL/catch/include)
 add_library(MathLib
 	src/Vector.h
 	src/Vector.cpp

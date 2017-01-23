@@ -1,13 +1,24 @@
+#define CATCH_CONFIG_MAIN
+#include <catch/catch.hpp>
+
 #include "Vector.h"
 
-int main()
-{
-	Vector v1, v2(1,2,3);
-	v1.x =5;
-	v1.y = 6;
-	v1.z = 7;
+#define CHECK_VEC3(vec, xx, yy, zz)\
+CHECK(vec.x == Approx(xx));\
+CHECK(vec.y == Approx(yy));\
+CHECK(vec.z == Approx(zz));
 
-	return 0;
+TEST_CASE("Vector", "[arithmetic]")
+{
+	Vector v1(1, 2, 3), v2;
+	
+	SECTION ("ctors")
+	{
+		CHECK_VEC3(v1, 1, 2, 3);
+		CHECK_VEC3(v2, 0, 0, 0);
+		
+	}
+
 
 
 }
